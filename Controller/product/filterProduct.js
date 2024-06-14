@@ -1,9 +1,14 @@
 const productModel = require("../../Models/productModel");
 
-const getCategoryWiseProduct = async (req, res) => {
+const filterProductController = async (req, res) => {
   try {
-    const { category } = req?.body || req?.query;
-    const product = await productModel.find({ category });
+    const categoryList = req?.body?.category || [];
+
+    const product = await productModel.find({
+      category: {
+        $in: categoryList,
+      },
+    });
 
     res.json({
       data: product,
@@ -12,7 +17,7 @@ const getCategoryWiseProduct = async (req, res) => {
       success: true,
     });
   } catch (error) {
-    res.status(400).json({
+    res.json({
       message: error.message || error,
       data: {},
       error: true,
@@ -21,4 +26,4 @@ const getCategoryWiseProduct = async (req, res) => {
   }
 };
 
-module.exports = getCategoryWiseProduct;
+module.exports = filterProductController;
