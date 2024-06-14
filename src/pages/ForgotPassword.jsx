@@ -1,10 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+
 
 export default function ForgotPassword() {
-  return (
-    <div>
-      This Is Forgot Password Page
-    </div>
-  )
+  
+  return <div>This Is Forgot Password Page</div>;
 }

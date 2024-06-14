@@ -45,17 +45,17 @@
   color: #888;
 }
 */
-.userTable{
-  @apply bg-white 
+.userTable {
+  @apply bg-white;
 }
 
-.userTable th{
-  @apply border text-base font-medium
+.userTable th {
+  @apply border text-base font-medium;
 }
 
-.userTable td{
+.userTable td {
   @apply border text-base font-medium
-  text-center
+  text-center;
 }
 /* scrollBar Hiden */
 

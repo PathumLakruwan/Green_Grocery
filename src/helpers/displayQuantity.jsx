@@ -1,11 +1,12 @@
-const displayLKR = (num) => {
+const displayKg = (num) => {
   const formatter = new Intl.NumberFormat("en-SL", {
-    style: "currency",
-    currency: "LKR",
+    style: "unit",
+    unit: "kilogram",
+    unitDisplay: "narrow",
     minimumFractionDigits: 2,
   });
 
   return formatter.format(num);
 };
 
-export default displayLKR;
+export default displayKg;
